@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\My PC\\\\rplatino\" -Recurse -Depth 4 | Where-Object {!$_.PSIsContainer} | Select-Object -ExpandProperty FullName)",
+      "PowerShell(Rename-Item \"c:\\\\Users\\\\My PC\\\\rplatino\\\\src\\\\middleware.ts\" \"proxy.ts\")",
+      "PowerShell(cd \"c:\\\\Users\\\\My PC\\\\rplatino\"; $env:PGPASSWORD='R@m0nc1t09977'; psql \"postgresql://postgres@db.rntffmjdayvyjdrljfum.supabase.co:5432/postgres\" -f supabase/schema.sql 2>&1)",
+      "Skill(claude-api)",
+      "Skill(claude-api:*)"
+    ]
+  }
+}
