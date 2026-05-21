@@ -1,20 +1,45 @@
-@AGENTS.md
-Home Inventory — a web app to track household consumables so you never run out of essentials.
+# HomeVentory
 
-What it does
-Track items — milk, dishwashing liquid, shampoo, cleaning supplies, etc. with quantity, unit, category, expiry date, and a low-stock threshold
-Dashboard — overview of total items, low stock count, and expiry alerts at a glance
-Alerts — flags items that are expired (red), expiring within 7 days (amber), or running low (orange)
-Receipt scanning — take a photo of a grocery receipt and Claude AI (Gemini Flash) reads it and auto-populates items into the inventory
-Autocomplete — when adding items manually, a dropdown suggests from 110 preset household items plus anything you've added before
-Auth — each user has their own private inventory (email/password login via Supabase)
-Categories
-Food & Beverages · Cleaning Supplies · Personal Care · Kitchen · Laundry · Other
+## What This Is
+Inventory System for Household items like soap, milk, softdrinks, etc
+Users scan receipts to add latest stocks
 
-Tech stack
-Layer	Tech
-Framework	Next.js 16 (App Router, TypeScript)
-Styling	Tailwind CSS
-Auth & Database	Supabase (Postgres + Row Level Security)
-AI receipt parsing	Google Gemini 2.0 Flash (free tier)
-Icons	Lucide React
+## Tech Stack
+- Framework: Next.js 16 (App Router, TypeScript)
+- TypeScript (strict mode)
+- Auth & Database: Supabase (Postgres + Row Level Security)
+- Styling: Tailwind CSS
+- Icons: Lucide React
+- Vercel (deployment)
+
+## Key Folders
+- /app → App Router pages and layouts
+- /app/parse-receipt → parse receipt via gemini
+- /app/auth → Authentication via supabase
+- /app/dashboard → inventory
+- /app/lib/supabase.ts → Supabase client (don't touch)
+- /app/login → login codes
+
+## Coding Conventions
+- Functional components only
+- Named exports only (no default exports)
+- Tailwind utility classes only (no inline styles, no custom CSS)
+- All API routes must include try/catch with standard error format
+- Use existing UI components from /components before creating new ones
+
+## Never Do This
+- Don't install new dependencies without explicit permission
+- Don't modify /lib/supabase.ts or auth configuration
+- Don't change component APIs without discussing first
+- Don't add custom CSS files
+- Don't use default exports
+
+## Useful Commands
+- `npm run dev` → local dev server (port 3000)
+- `npm run build` → production build
+- `npm run lint` → ESLint check
+- `npx supabase status` → check Supabase connection
+
+## Common Tasks
+- Receipt scanning: OCR handled by /api/parse-receipt route using gemini
+- Currency: Always display in PHP (₱)

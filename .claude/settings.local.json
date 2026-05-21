@@ -5,7 +5,11 @@
       "PowerShell(Rename-Item \"c:\\\\Users\\\\My PC\\\\rplatino\\\\src\\\\middleware.ts\" \"proxy.ts\")",
       "PowerShell(cd \"c:\\\\Users\\\\My PC\\\\rplatino\"; $env:PGPASSWORD='R@m0nc1t09977'; psql \"postgresql://postgres@db.rntffmjdayvyjdrljfum.supabase.co:5432/postgres\" -f supabase/schema.sql 2>&1)",
       "Skill(claude-api)",
-      "Skill(claude-api:*)"
+      "Skill(claude-api:*)",
+      "PowerShell(winget install --id GitHub.cli --silent --accept-package-agreements --accept-source-agreements 2>&1)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); gh auth status 2>&1)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); gh auth login --web --hostname github.com 2>&1)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); cd \"c:\\\\Users\\\\My PC\\\\rplatino\"; gh repo create homeventory --public --source=. --remote=origin --push 2>&1)"
     ]
   }
 }
